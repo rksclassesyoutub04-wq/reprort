@@ -1,11 +1,11 @@
 components:
   - name: web
     role: web
-    platform: python
-    platformVersion: "3.14"
+    platform: nodejs
+    platformVersion: "24"
     path: /
     run:
       port: 8080
-      start: python app.py
+      start: node server.mjs
       healthCheckPath: /health
       healthCheckStatusCodes: [200]
