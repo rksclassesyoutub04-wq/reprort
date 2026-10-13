@@ -1,17 +1,11 @@
-# builder.yaml — Embr App Service Builder starter template
-#
-# IMPORTANT:
-# This is a starter file only. The exact builder.yaml schema for your
-# App Service Builder staging environment has not been verified.
-# Use the Builder app's Docs/template example to fill in the required fields
-# before retrying deployment.
-#
-# Keep this file at the ROOT of the GitHub repository, alongside README.md.
-#
-# TODO:
-# 1. Open App Service Builder > Docs.
-# 2. Copy the documented builder.yaml structure into this file.
-# 3. Replace the example/placeholders with values for your application.
-# 4. Commit this file to the same branch selected in App Service Builder.
-#
-# No deployment settings are enabled by this starter file.
+components:
+  - name: web
+    role: web
+    platform: nodejs
+    platformVersion: "24"
+    path: /
+    run:
+      port: 8080
+      start: node server.mjs
+      healthCheckPath: /health
+      healthCheckStatusCodes: [200]
